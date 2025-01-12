@@ -3,6 +3,7 @@ const cron = require("node-cron");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const expenseEmail = require("./EmailService/Expense");
 
 dotenv.config();
 
@@ -15,13 +16,13 @@ mongoose
     console.log(err);
   });
 
-  const run = () =>{
-    cron.schedule('* * * * * *', () => {
-        console.log('running a task every second');
-      });
-  }
+const run = () => {
+  cron.schedule("* * * * * *", () => {
+    expenseEmail();
+  });
+};
 
-  run();
+run();
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);

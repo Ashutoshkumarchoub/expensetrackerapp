@@ -5,6 +5,7 @@
     "@mui/material": "^6.3.1",
     "@mui/styled-engine-sc": "^6.3.1",
     "@mui/x-charts": "^7.23.6",
+    "axios": "^1.7.9",
     "styled-components": "^6.1.14"
   }
 }
